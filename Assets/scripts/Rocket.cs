@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +14,10 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Quaternion randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+
+		// Instantiate the explosion where the rocket is with the random rotation.
+		//Instantiate(explosion, transform.position, randomRotation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,9 +29,13 @@ public class Rocket : MonoBehaviour
                         Quaternion.Euler(0, 0, rotation));
             Destroy(gameObject);
         }
-        /*if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().hurt();
-        }*/
+            collision.gameObject.GetComponent<Enemy>().Hurt();
+        }
+        if(collision.gameObject.tag == "BombPickup")
+        {
+			Destroy (gameObject);
+        }
     }
 }

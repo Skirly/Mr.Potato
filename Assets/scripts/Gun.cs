@@ -11,7 +11,6 @@ public class Gun : MonoBehaviour
     void Start()
     {
         playerCtrl = transform.root.GetComponent<PlayerCtrl>();
-        Debug.Log(playerCtrl);
     }
 
     // Update is called once per frame
