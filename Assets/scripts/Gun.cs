@@ -18,6 +18,8 @@ public class Gun : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
+            //if(EventSystem.current.IsPointerOverGameObject()) return;
+            //GetComponent<AudioSource>().play();
             if(playerCtrl.bFaceRight)
             {
                 GameObject bulletInstance = Instantiate(rocket, transform.position, Quaternion.Euler(0, 0, 0)) ;
